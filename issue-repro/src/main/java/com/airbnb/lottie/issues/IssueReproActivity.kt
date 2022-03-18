@@ -5,10 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.issues.databinding.IssueReproActivityBinding
 
 class IssueReproActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = IssueReproActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        // Reproduce any issues here.
+
+        with(binding.animationView1Top) {
+            progress = 1.0f
+        }
+
+        with(binding.animationView2Bottom) {
+            setMaxProgress(1.0f)
+            progress = 1.0f
+        }
     }
 }
